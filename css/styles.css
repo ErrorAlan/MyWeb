@@ -39,6 +39,35 @@
     --z-modal: 100;
 
 }
+/* navbar stuff */
+
+.nav { width: 100%; height: 65px; position: fixed; line-height: 65px; text-align: center; z-index: 1; }
+
+.nav div.logo {float: left; width: auto; height: auto; padding-left: 3rem;}
+
+.nav div.logo a { text-decoration: none; color: var(--text-color); font-size: 2.5rem;}
+
+.nav div.logo a:hover {color: red;}
+
+.nav div.main-list {height: 65px; float: right;}
+
+.nav div.main-list ul { width: 100%; height: 65px; display: flex; list-style: none; margin: 0; padding: 0; }
+
+.nav div.main-list ul li { width: auto; height: 65px; padding: 0; padding-right: 3rem; }
+
+.nav div.main-list ul li a { text-decoration: none; color: #fff; line-height: 65px; font-size: 2.4rem; }
+
+.nav div.main-list ul li a:hover { color: red; }
+
+.navTrigger { display: none; }
+
+.nav { padding-top: 20px; padding-bottom: 20px; -webkit-transition: all 0.4s ease; transition: all 0.4s ease; }
+
+@media screen {
+    
+}
+
+/* end navbar stuff */
 
 @media screen and (max-width: 1024px) {
     :root {
@@ -119,6 +148,7 @@ button { cursor: pointer; }
 
 .home { background: url('../resources/spellBG.png'); background-size: cover; background-position: center center; height: 100vh;}
 .home-container { position: relative; height: 100%; align-items: center; }
+
 .home-grad { background-image: linear-gradient(rgba(14, 21, 31, 0), rgba(14, 21, 31, 0) 60%,rgba(14, 21, 31, 0.5) 80%,rgba(14, 21, 31, 1))}
 .home-data { background-image: linear-gradient( to right,rgba(14, 21, 31, 0.85),rgba(14, 21, 31, 0.65) 30%,rgba(14, 21, 31, 0) 40%,rgba(14, 21, 31, 0)); border-radius: 10px; padding: 5px;}
 
