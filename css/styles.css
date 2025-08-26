@@ -149,7 +149,7 @@ button { cursor: pointer; }
 .home { background: url('../resources/spellBG.png'); background-size: cover; background-position: center center; height: 100vh;}
 .home-container { position: relative; height: 100%; align-items: center; }
 
-.home-grad { background-image: linear-gradient(rgba(14, 21, 31, 0), rgba(14, 21, 31, 0) 60%,rgba(14, 21, 31, 0.5) 80%,rgba(14, 21, 31, 1))}
+.home-grad { background-image: linear-gradient(rgba(14, 21, 31, 1), rgba(14, 21, 31, 0) 30%, rgba(14, 21, 31, 0) 60%,rgba(14, 21, 31, 0.5) 80%,rgba(14, 21, 31, 1))}
 .home-data { background-image: linear-gradient( to right,rgba(14, 21, 31, 0.85),rgba(14, 21, 31, 0.65) 30%,rgba(14, 21, 31, 0) 40%,rgba(14, 21, 31, 0)); border-radius: 10px; padding: 5px;}
 
 .home-social { position: absolute; top: 1.8rem; left: 0; display: flex; align-items: center; column-gap: 3.5rem; }
