@@ -35,8 +35,6 @@
       <section class="home" id="home">
         <div class="home-grad">
           <div class="home-container container grid">
-            <img src="..\resources\wizardbg.jpg" alt="" class="home-img" />
-
             <div class="home-data">
               <h1 class="home-title">Hello, I am Lawrence</h1>
               <h3 class="home-subtitle">Aspiring Master of None</h3>
@@ -124,3 +122,17 @@
     </main>
   </body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="..\scripts\script.js"></script>
+
+<script>
+  $(window).scroll(function () {
+    if ($(document).scrollTop() > 50) {
+      $(".nav").addClass("affix");
+      console.log("OK");
+    } else {
+      $(".nav").removeClass("affix");
+    }
+  });
+</script>
