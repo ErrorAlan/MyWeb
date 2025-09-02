@@ -4,6 +4,7 @@
     --hue-color: 215;
 
     --skin-color: hsl(342, 92%, 46%);
+    --sking-tint: hsl(342, 92%, 25%);
     --mirage-color: hsl(317, 66%, 40%);
     --title-color: hsl(var(--hue-color), 8%, 95%);
     --text-color: hsl(var(--hue-color), 8%, 85%);
@@ -12,13 +13,20 @@
     --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
 
+    --white: rgba(255, 255, 255, 1);
+    --black: rgba(38, 38, 38, 1);
+    --lightGray: rgba(245, 239, 237, 1);
+    --gray: rgba(213, 223, 229, 1);
+    --lightBlue: rgba(86, 203, 249, 1);
+    --blue: rgba(28, 119, 195, 1);
+
     --body-font: 'Poppins', sans-serif;
     --signature-font: 'Turret Road', sans-serif;
 
     --biggest-font-size: 3rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
+    --h3-font-size: 1.4rem;
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
@@ -373,7 +381,8 @@ button { cursor: pointer; }
     border-radius: .25rem; 
     font-weight: var(--font-medium);
     position: relative;
-    transition: .4s;
+    z-index: 1;
+    transition: .1s;
 }
     .button::after { 
         position: absolute; 
@@ -387,7 +396,7 @@ button { cursor: pointer; }
         transform-origin: center; 
         transform: scale(0); 
         border-radius: .25rem;
-        transition: .3s; 
+        transition: .2s; 
     }
 
 .button:hover::after { transform: scale(1); }
@@ -438,3 +447,185 @@ button { cursor: pointer; }
 .about-icon { font-size: 1.5rem; color: var(--skin-color); margin-bottom: var(--mb075); }
 .about-title { font-size: var(--small-font-size); }
 .about-subtitle { font-size: var(--small-font-size); }
+
+
+/* timeline stuff */
+
+
+
+.experience-timeline {
+  height: 600px;
+  display: flex;
+}
+
+
+.experience-timeline p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+}
+
+.experience-timeline h3 {
+  font-size: 1.4rem;
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.experience-timeline h4 {
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.timeline {
+  width: 100%;
+  position: relative;
+  perspective: 5000px;
+}
+
+.timeline::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: var(--skin-color);
+  border-radius: 15px;
+  top: 72px;
+}
+
+.timeline .timeline-item {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.timeline .timeline-item:hover::after {
+  transform: scale(1.5, 1.5);
+}
+
+.timeline .timeline-item.selected::after {
+  background-color: var(--skin-color);
+  border: 2px solid var(--sking-tint);
+  transform: scale(1.5, 1.5);
+}
+
+.timeline .timeline-item::after {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 69px;
+  left: 50%;
+  background-color: var(--skin-color);
+  border: 2px solid var(--sking-tint);
+  content: "";
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+
+.timeline .timeline-item .timeline-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  position: absolute;
+  top: -300px;
+  opacity: 0;
+  visibility: hidden;
+  width: 350px;
+  height: 300PX;
+  left: -60px;
+  cursor: auto;
+}
+
+.timeline .timeline-item .timeline-content .button {
+    margin-top: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.timeline .timeline-item .timeline-content.fadeIn {
+  animation: fadeIn 1.5s ease 0.1s forwards;
+}
+
+.timeline .timeline-item .timeline-content.animated {
+  visibility: visible;
+}
+
+.flex-container {
+  margin-top: 350px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.flex-items-default {
+  width: 224px;
+  height: 150px;
+}
+
+.dropdown {
+  width: 400px;
+  height: 326px;
+  border: 2px solid var(--sking-tint);
+  box-shadow: 0 3px 20px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  position: absolute;
+  top: -310px;
+  animation-duration: 0.2s;
+  transition: left 0.3s ease;
+}
+
+.dropdown .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown .inner .arrow-down {
+  position: absolute;
+  bottom: -19px;
+  left: 50%;
+  margin-left: -20px;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid var(--white);
+}
+
+.animated {
+  display: block;
+}
+
+.material-icons {
+  position: absolute;
+  top: 189px;
+  left: 160px;
+  width: 100%;
+  color: var(--white);
+  font-size: 33px;
+}
+
+
+
+
+
