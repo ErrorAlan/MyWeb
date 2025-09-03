@@ -456,6 +456,7 @@ button { cursor: pointer; }
 .experience-timeline {
   height: 600px;
   display: flex;
+  background-image: radial-gradient(rgb(41, 68, 106,1), rgba(14, 21, 31, 1) 60%);
 }
 
 
@@ -506,11 +507,11 @@ button { cursor: pointer; }
 .timeline .timeline-item.selected::after {
   background-color: var(--skin-color);
   border: 2px solid var(--sking-tint);
-  transform: scale(1.5, 1.5);
+  transform: scale(1.5, 2);
 }
 
 .timeline .timeline-item::after {
-  width: 8px;
+  width: 4px;
   height: 8px;
   position: absolute;
   top: 69px;
@@ -583,6 +584,7 @@ button { cursor: pointer; }
   width: 400px;
   height: 326px;
   border: 2px solid var(--sking-tint);
+  background-color: rgba(14, 21, 31, 0.3);
   box-shadow: 0 3px 20px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   position: absolute;
