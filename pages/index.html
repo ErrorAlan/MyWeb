@@ -3,8 +3,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lawrence</title>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
     <link rel="stylesheet" href="/css/styles.css" />
     <!-- navbar? -->
+  </head>
+
+  <body>
     <nav class="nav">
       <div class="nav-container">
         <div class="logo">
@@ -12,7 +19,7 @@
         </div>
         <div id="mainListDiv" class="main-list">
           <ul class="navlinks">
-            <li><a href="">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="">Projects</a></li>
             <li><a href="">Skills</a></li>
@@ -26,9 +33,6 @@
         </span>
       </div>
     </nav>
-  </head>
-
-  <body>
     <main class="main">
       <!-- about me -->
 
@@ -147,35 +151,338 @@
         <h2 class="section-title" data-heading="My Portfolio">
           Recent Projects
         </h2>
+
+        <!-- card for in the rotaty thing -->
         <div class="work-container container grid">
-          <div class="work-card mix web">
-            <img
-              src="../resources/robot.jpg"
-              alt="a picture of a robot could be downsized"
-              class="work-img"
-            />
-            <h3 class="work-title">whistle Controlled Robot</h3>
-            <span class="work-button"
-              >More<i class="uil uil-arrow-right work-button-icon"></i
-            ></span>
-            <div class="project-details">
-              <h3 class="details-title">A robot that is controlled by sound</h3>
-              <p class="details-description">
-                A walking robot that is controlled by noise and sound,
-                specifically whistling
-              </p>
-              <ul class="details-info">
-                <li>Created - <span>date here</span></li>
-                <li>Tech - <span>Quantum Basic Juggling</span></li>
-                <li>Status - <span>Complete</span></li>
-                <li>
-                  See More - <span><a href="#new-page"></a></span>
-                </li>
-              </ul>
-            </div>
+          <div class="project-gal">
+            <ul class="project-cards" id="project-cards">
+              <li>
+                <figure class="project-card">
+                  <img
+                    src="../resources/robot.jpg"
+                    alt="project image"
+                    class="work-img"
+                  />
+                  <figcaption>
+                    <h2>Killer Robot<span>ROS & cpp</span></h2>
+                    <p>Potato ipsum dol</p>
+                    <span class="proj-info">More Info</span>
+                  </figcaption>
+
+                  <!-- more details pop up -->
+                  <div class="portfolio-item-details">
+                    <h3 class="details-title">A robot that murders everyone</h3>
+                    <p class="details-description">
+                      this robot is horrendously vilent and near indestructible.
+                      We're not sure how to turn it off...
+                    </p>
+                    <ul class="details-info">
+                      <li>Created - <span>day one</span></li>
+                      <li>Tech - <span>Quantum Basic Juggling</span></li>
+                      <li>Status - <span>Complete</span></li>
+                      <li>
+                        See More - <span><a href="#new-page"></a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </figure>
+              </li>
+
+              <!-- card 2 for in the rotaty thing also has the classes for the pop up to work-->
+
+              <li>
+                <figure class="project-card">
+                  <img
+                    src="../resources/robot.jpg"
+                    alt="project image"
+                    class="work-img"
+                  />
+                  <figcaption>
+                    <h2>Friendly Robot<span>ROS & cpp</span></h2>
+                    <p>
+                      Tomato ipsum dolor sit amet consectetur adipisicing elit.
+                      Eligendi commodi quas hic excepturi asperiores dolorem
+                      expedita, pariatur dignissimos nemo doloribus.
+                    </p>
+                    <span class="proj-info">More Info</span>
+                  </figcaption>
+
+                  <!-- more details pop up -->
+                  <div class="portfolio-item-details">
+                    <h3 class="details-title">A robot that is very friendly</h3>
+                    <p class="details-description">
+                      this robot give out hugs and lolipops and its only goal is
+                      to hunt down the murder robot
+                    </p>
+                    <ul class="details-info">
+                      <li>Created - <span>day two</span></li>
+                      <li>Tech - <span>Quantum Basic Juggling</span></li>
+                      <li>Status - <span>Complete</span></li>
+                      <li>
+                        See More - <span><a href="#new-page"></a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </figure>
+              </li>
+              <!-- card 3 -->
+              <li>
+                <figure class="project-card">
+                  <img
+                    src="../resources/robot.jpg"
+                    alt="project image"
+                    class="work-img"
+                  />
+                  <figcaption>
+                    <h2>Killer Robot<span>ROS & cpp</span></h2>
+                    <p>
+                      Potato ipsum dolor sit amet consectetur adipisicing elit.
+                      Eligendi commodi quas hic excepturi asperiores dolorem
+                      expedita, pariatur dignissimos nemo doloribus.
+                    </p>
+                    <span class="proj-info">More Info</span>
+                  </figcaption>
+
+                  <!-- more details pop up -->
+                  <div class="portfolio-item-details">
+                    <h3 class="details-title">A robot that murders everyone</h3>
+                    <p class="details-description">
+                      this robot is horrendously vilent and near indestructible.
+                      We're not sure how to turn it off...
+                    </p>
+                    <ul class="details-info">
+                      <li>Created - <span>day one</span></li>
+                      <li>Tech - <span>Quantum Basic Juggling</span></li>
+                      <li>Status - <span>Complete</span></li>
+                      <li>
+                        See More - <span><a href="#new-page"></a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </figure>
+              </li>
+              <!-- card 4 -->
+              <li>
+                <figure class="project-card">
+                  <img
+                    src="../resources/robot.jpg"
+                    alt="project image"
+                    class="work-img"
+                  />
+                  <figcaption>
+                    <h2>Killer Robot<span>ROS & cpp</span></h2>
+                    <p>
+                      Potato ipsum dolor sit amet consectetur adipisicing elit.
+                      Eligendi commodi quas hic excepturi asperiores dolorem
+                      expedita, pariatur dignissimos nemo doloribus.
+                    </p>
+                    <span class="proj-info">More Info</span>
+                  </figcaption>
+
+                  <!-- more details pop up -->
+                  <div class="portfolio-item-details">
+                    <h3 class="details-title">A robot that murders everyone</h3>
+                    <p class="details-description">
+                      this robot is horrendously vilent and near indestructible.
+                      We're not sure how to turn it off...
+                    </p>
+                    <ul class="details-info">
+                      <li>Created - <span>day one</span></li>
+                      <li>Tech - <span>Quantum Basic Juggling</span></li>
+                      <li>Status - <span>Complete</span></li>
+                      <li>
+                        See More - <span><a href="#new-page"></a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </figure>
+              </li>
+              <!-- card 5 -->
+              <li>
+                <figure class="project-card">
+                  <img
+                    src="../resources/robot.jpg"
+                    alt="project image"
+                    class="work-img"
+                  />
+                  <figcaption>
+                    <h2>Killer Robot<span>ROS & cpp</span></h2>
+                    <p>
+                      Potato ipsum dolor sit amet consectetur adipisicing elit.
+                      Eligendi commodi quas hic excepturi asperiores dolorem
+                      expedita, pariatur dignissimos nemo doloribus.
+                    </p>
+                    <span class="proj-info">More Info</span>
+                  </figcaption>
+
+                  <!-- more details pop up -->
+                  <div class="portfolio-item-details">
+                    <h3 class="details-title">A robot that murders everyone</h3>
+                    <p class="details-description">
+                      this robot is horrendously vilent and near indestructible.
+                      We're not sure how to turn it off...
+                    </p>
+                    <ul class="details-info">
+                      <li>Created - <span>day one</span></li>
+                      <li>Tech - <span>Quantum Basic Juggling</span></li>
+                      <li>Status - <span>Complete</span></li>
+                      <li>
+                        See More - <span><a href="#new-page"></a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </figure>
+              </li>
+              <!-- card 6 -->
+              <li>
+                <figure class="project-card">
+                  <img
+                    src="../resources/robot.jpg"
+                    alt="project image"
+                    class="work-img"
+                  />
+                  <figcaption>
+                    <h2>Killer Robot<span>ROS & cpp</span></h2>
+                    <p>
+                      Potato ipsum dolor sit amet consectetur adipisicing elit.
+                      Eligendi commodi quas hic excepturi asperiores dolorem
+                      expedita, pariatur dignissimos nemo doloribus.
+                    </p>
+                    <span class="proj-info">More Info</span>
+                  </figcaption>
+
+                  <!-- more details pop up -->
+                  <div class="portfolio-item-details">
+                    <h3 class="details-title">A robot that murders everyone</h3>
+                    <p class="details-description">
+                      this robot is horrendously vilent and near indestructible.
+                      We're not sure how to turn it off...
+                    </p>
+                    <ul class="details-info">
+                      <li>Created - <span>day one</span></li>
+                      <li>Tech - <span>Quantum Basic Juggling</span></li>
+                      <li>Status - <span>Complete</span></li>
+                      <li>
+                        See More - <span><a href="#new-page"></a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </figure>
+              </li>
+              <!-- card 7  -->
+              <li>
+                <figure class="project-card">
+                  <img
+                    src="../resources/robot.jpg"
+                    alt="project image"
+                    class="work-img"
+                  />
+                  <figcaption>
+                    <h2>Killer Robot<span>ROS & cpp</span></h2>
+                    <p>
+                      Potato ipsum dolor sit amet consectetur adipisicing elit.
+                      Eligendi commodi quas hic excepturi asperiores dolorem
+                      expedita, pariatur dignissimos nemo doloribus.
+                    </p>
+                    <span class="proj-info">More Info</span>
+                  </figcaption>
+
+                  <!-- more details pop up -->
+                  <div class="portfolio-item-details">
+                    <h3 class="details-title">A robot that murders everyone</h3>
+                    <p class="details-description">
+                      this robot is horrendously vilent and near indestructible.
+                      We're not sure how to turn it off...
+                    </p>
+                    <ul class="details-info">
+                      <li>Created - <span>day one</span></li>
+                      <li>Tech - <span>Quantum Basic Juggling</span></li>
+                      <li>Status - <span>Complete</span></li>
+                      <li>
+                        See More - <span><a href="#new-page"></a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </figure>
+              </li>
+              <!-- card 8 -->
+              <li>
+                <figure class="project-card">
+                  <img
+                    src="../resources/robot.jpg"
+                    alt="project image"
+                    class="work-img"
+                  />
+                  <figcaption>
+                    <h2>Killer Robot<span>ROS & cpp</span></h2>
+                    <p>
+                      Potato ipsum dolor sit amet consectetur adipisicing elit.
+                      Eligendi commodi quas hic excepturi asperiores dolorem
+                      expedita, pariatur dignissimos nemo doloribus.
+                    </p>
+                    <span class="proj-info">More Info</span>
+                  </figcaption>
+
+                  <!-- more details pop up -->
+                  <div class="portfolio-item-details">
+                    <h3 class="details-title">A robot that murders everyone</h3>
+                    <p class="details-description">
+                      this robot is horrendously vilent and near indestructible.
+                      We're not sure how to turn it off...
+                    </p>
+                    <ul class="details-info">
+                      <li>Created - <span>day one</span></li>
+                      <li>Tech - <span>Quantum Basic Juggling</span></li>
+                      <li>Status - <span>Complete</span></li>
+                      <li>
+                        See More - <span><a href="#new-page"></a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </figure>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
+
+      <!-- pop up default i think -->
+
+      <div class="portfolio-popup">
+        <div class="portfolio-popup-inner">
+          <div class="portfolio-popup-content grid">
+            <span class="portfolio-popup-close"
+              ><i class="uil uil-times"></i
+            ></span>
+            <div class="pp-thumbnail">
+              <img
+                src="https://i.postimg.cc/sXLjnC5p/work-2.png"
+                alt=""
+                class="portfolio-popup-img"
+              />
+            </div>
+
+            <div class="portfolio-popup-info">
+              <div class="portfolio-popup-body">
+                <h3 class="details-title">App for Technology & Services</h3>
+                <p class="details-description">
+                  A stylish burger restaurant mobile app interface displayed on
+                  two smartphones
+                </p>
+
+                <ul class="details-info">
+                  <li>Created - <span>15 Apr 2025</span></li>
+                  <li>Technologies - <span>html css</span></li>
+                  <li>Role - <span>frontend</span></li>
+                  <li>
+                    View - <span><a href="#">www.domain.com</a></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- My skills -->
       <section class="skills section" id="skills">
@@ -188,7 +495,8 @@
         <h2 class="section-title" data-heading="Reach Out">Contact Me</h2>
         <p>stuff here about contacting me</p>
       </section>
-
+      <script src="..\scripts\gsap.min.js"></script>
+      <script src="..\scripts\ScrollTrigger.min.js"></script>
       <footer></footer>
     </main>
   </body>
@@ -196,7 +504,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <script src="..\scripts\script.js"></script>
-
 <script>
   $(window).scroll(function () {
     if ($(document).scrollTop() > 50) {
@@ -207,3 +514,5 @@
     }
   });
 </script>
+
+<!-- the bit for tha carousel -->

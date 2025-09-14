@@ -112,3 +112,46 @@ function hideDropDown() {
   $timelineItem.removeClass('selected');
   $dropDown.removeClass('bounceIn').addClass('fadeOut');
 }
+
+//Portfolio Popup
+
+document.addEventListener('click', (e) => {
+    if(e.target.classList.contains('proj-info')){
+        togglePortfolioPopup();
+        portfolioItemDetails(e.target.parentElement.parentElement);
+    }
+})
+
+function togglePortfolioPopup() {
+    document.querySelector('.portfolio-popup').classList.toggle('open');
+}
+
+document.querySelector('.portfolio-popup-close').addEventListener('click', togglePortfolioPopup);
+
+function portfolioItemDetails(portfolioItem) {
+    document.querySelector('.pp-thumbnail img').src = portfolioItem.querySelector('.work-img').src;
+    document.querySelector('.portfolio-popup-body').innerHTML = portfolioItem.querySelector('.portfolio-item-details').innerHTML;
+}
+
+
+// card scroll part
+
+const carousel = document.getElementById("project-cards");
+
+function checkscroll() {
+  const scrollLeft = carousel.scrollLeft;
+  const scrollWidth = carousel.scrollWidth;
+  const visibleWidth = carousel.clientWidth;
+
+  // If scrolled to the end → jump back to start
+  if (scrollLeft + visibleWidth >= scrollWidth - 1) {
+    carousel.scrollLeft = 0;
+  }
+  // If scrolled to the start → jump to end
+  else if (scrollLeft === 0) {
+    carousel.scrollLeft = scrollWidth / 2 - visibleWidth;
+  }
+}
+
+carousel.addEventListener("scroll", checkScroll);
+
