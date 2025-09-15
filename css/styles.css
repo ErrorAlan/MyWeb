@@ -1129,6 +1129,18 @@ figure p {
 /* project rotation stuff */
 
 
+.project-gal {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    crollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.project-gal::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
 .project-cards {
     display: flex;
     align-items: stretch;
@@ -1152,4 +1164,10 @@ figure p {
     display: flex;
     gap: 1rem;
     align-items: stretch;
+    cursor: grab;
+    transition: transform 0.2s;
+}
+
+.project-cards li:hover {
+    transform: scale(1.1);
 }

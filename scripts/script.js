@@ -135,23 +135,45 @@ function portfolioItemDetails(portfolioItem) {
 
 
 // card scroll part
+const carousel = document.getElementById("project-gallery");
+let isDown = false;
+let startX;
+let scrollLeft;
 
-const carousel = document.getElementById("project-cards");
+// Mouse & touch drag
+carousel.addEventListener("mousedown", (e) => {
+  isDown = true;
+  carousel.classList.add("active");
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
 
-function checkscroll() {
-  const scrollLeft = carousel.scrollLeft;
+carousel.addEventListener("mouseleave", () => (isDown = false));
+carousel.addEventListener("mouseup", () => (isDown = false));
+carousel.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = x - startX;
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
+carousel.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+carousel.addEventListener("touchmove", (e) => {
+  const x = e.touches[0].pageX - carousel.offsetLeft;
+  const walk = x - startX;
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
+carousel.addEventListener("scroll", () => {
   const scrollWidth = carousel.scrollWidth;
   const visibleWidth = carousel.clientWidth;
-
-  // If scrolled to the end → jump back to start
-  if (scrollLeft + visibleWidth >= scrollWidth - 1) {
+  if (carousel.scrollLeft >= scrollWidth / 2) {
     carousel.scrollLeft = 0;
-  }
-  // If scrolled to the start → jump to end
-  else if (scrollLeft === 0) {
+  } else if (carousel.scrollLeft === 0) {
     carousel.scrollLeft = scrollWidth / 2 - visibleWidth;
   }
-}
-
-carousel.addEventListener("scroll", checkScroll);
-
+});
