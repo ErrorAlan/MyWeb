@@ -897,103 +897,100 @@ input {
 
 /* project cards css */
 
-figure {
+.project-card {
     position: relative;
     overflow: hidden;
     margin: 10px;
-    min-width: 230px;
     max-width: 315px;
+    max-height: 500px;
+    height: 100%;
     width: 100%;
     color: #ffffff;
     text-align: left;
     line-height: 1.4em;
     background-color: #141414;
-    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: column; 
 }
 
-figure * {
+.project-card * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
-
 }
 
-figure img {
+.work-img {
     max-width: 100%;
     vertical-align: top;
-    opacity: 0.85;
 }
 
-figure figcaption {
-    width: 100%;
-    background-color: #141414;
-    padding: 10px 25px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-
+.project-card figcaption {
+  width: 100%;
+  background-color: #141414;
+  padding: 25px;
+  position: relative;
 }
 
-figure figcaption:before {
-
-    content: '';
-    bottom: 100%;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 0 0 400px;
-    border-color: transparent transparent transparent #141414;
+.project-card figcaption::before {
+     position: absolute;
+  content: '';
+  bottom: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 55px 0 0 400px;
+  border-color: transparent transparent transparent #141414;
 }
 
-figure figcaption .proj-info {
-    cursor: pointer;
-    padding: 5px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    font-size: 0.7em;
-    text-transform: uppercase;
-    margin-top: auto;
-    margin-bottom: 10px;
-    display: inline-block;
-    opacity: 0.65;
-    width: 47%;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
+.proj-info {
+    
+  position: absolute;
+  bottom: 15px;
+  left: 25px;
+  padding: 5px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 0.7em;
+  text-transform: uppercase;
+
+  display: inline-block;
+  opacity: 0.65;
+  width: 47%;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-figure figcaption .proj-info:hover {
+.proj-info:hover {
+    margin-right: 4%;
+    border-color: #2980b9;
+    color: #2980b9;
     opacity: 1;
 }
 
-figure .proj-info {
-    border-color: #2980b9;
-    color: #2980b9;
-}
-
-figure h2 {
+.project-card h2 {
     margin: 0 0 5px;
-    font-weight: 300;
+  font-weight: 300;
 }
 
-figure h2 span {
+.project-card h2 span {
     display: block;
-    font-size: 0.6em;
-    color: #2980b9;
+  font-size: 0.6em;
+  color: #2980b9;
 }
 
-figure p {
+.project-card p {
     margin: 0 0 10px;
-    font-size: 0.8em;
-    letter-spacing: 1px;
-    opacity: 0.8;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;   /* number of lines before cut */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* portfolio pop up bit lmao */
@@ -1129,45 +1126,3 @@ figure p {
 /* project rotation stuff */
 
 
-.project-gal {
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    width: 100%;
-    crollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-}
-
-.project-gal::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
-
-.project-cards {
-    display: flex;
-    align-items: stretch;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE/Edge */
-    width: 90%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.project-cards::-webkit-scrollbar {
-    display: none;
-}
-
-.project-cards li {
-    display: flex;
-    gap: 1rem;
-    align-items: stretch;
-    cursor: grab;
-    transition: transform 0.2s;
-}
-
-.project-cards li:hover {
-    transform: scale(1.1);
-}
