@@ -135,3 +135,82 @@ function portfolioItemDetails(portfolioItem) {
 
 
 // card scroll part
+
+
+const carousel = document.querySelector(".project-gal");
+const ul = carousel.querySelector("ul");
+const originalItems = [...ul.children];
+
+// Clone items on both sides
+originalItems.forEach(item => ul.appendChild(item.cloneNode(true))); // right
+originalItems.slice().reverse().forEach(item => ul.insertBefore(item.cloneNode(true), ul.firstChild)); // left
+
+// Calculate exact width of one original set
+let originalWidth = 0;
+originalItems.forEach(item => {
+  const style = getComputedStyle(item);
+  originalWidth += item.offsetWidth + parseInt(style.marginRight);
+});
+
+// Start in middle
+carousel.scrollLeft = originalWidth;
+
+// Infinite wrap
+carousel.addEventListener("scroll", () => {
+  if (carousel.scrollLeft <= 0) {
+    // Too far left → jump forward
+    carousel.scrollLeft += originalWidth;
+  } else if (carousel.scrollLeft >= originalWidth * 2) {
+    // Too far right → jump backward
+    carousel.scrollLeft -= originalWidth;
+  }
+});
+
+// Mouse wheel triggers horizontal scroll
+carousel.addEventListener("wheel", e => {
+  e.preventDefault();
+  carousel.scrollLeft += e.deltaY;
+});
+
+// Drag/swipe
+let isDragging = false;
+let startX, scrollStart;
+
+carousel.addEventListener("mousedown", e => {
+  isDragging = true;
+  startX = e.pageX;
+  scrollStart = carousel.scrollLeft;
+  carousel.style.cursor = "grabbing";
+});
+
+carousel.addEventListener("mousemove", e => {
+  if (!isDragging) return;
+  const dx = e.pageX - startX;
+  carousel.scrollLeft = scrollStart - dx;
+});
+
+carousel.addEventListener("mouseup", () => {
+  isDragging = false;
+  carousel.style.cursor = "grab";
+});
+
+carousel.addEventListener("mouseleave", () => {
+  isDragging = false;
+  carousel.style.cursor = "grab";
+});
+
+// Touch support
+carousel.addEventListener("touchstart", e => {
+  isDragging = true;
+  startX = e.touches[0].pageX;
+  scrollStart = carousel.scrollLeft;
+});
+
+carousel.addEventListener("touchmove", e => {
+  if (!isDragging) return;
+  const dx = e.touches[0].pageX - startX;
+  carousel.scrollLeft = scrollStart - dx;
+});
+
+carousel.addEventListener("touchend", () => isDragging = false);
+
